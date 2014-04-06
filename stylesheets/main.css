@@ -1,0 +1,79 @@
+body { 
+   font-family: Verdana, Helvetica, sans-serif; 
+   background-color: Moccasin;
+   font-size:100%;
+}
+.bankingitem {
+     background-color: #FFFFFF;
+     color: blue;
+}
+.tycoon {
+     font-family: Verdana, Helvetica, sans-serif; 
+     background-image:url('/images/NGC_5010.jpg'); 
+     background-color: black;
+}
+.gametile
+{
+   background-color: #FFFFCC;
+}
+.silentstrut {
+   background-color: #FFFFCC;
+   color: #FFFFCC;
+}
+.dothisnext {
+     padding: 4px;
+}
+.controlpanel {
+   background-xolor: #FFCCCC;
+   margin-left:auto;
+   margin-right:auto;
+}
+#backstory {
+   border:3px ridge red;
+   margin: 4px;
+   padding: 12px;
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 0.9em;
+   background-color: #FFFFCC;
+}
+#chatbox {
+   border:3px ridge red;
+   margin: 8px;
+   padding: 6px;
+   background-color: LightGoldenRodYellow;
+}
+.apptitle {
+   font-size: 2.5em;
+   font-weight: bolder;
+}
+#navline {
+   background-color: LightGoldenRodYellow;
+   text-align: right;
+   margin: 7px;
+}
+.hint {
+   font-size: .7em;
+   text-align: right;
+}
+.hall_of_fame
+{
+   background-color: Moccasin;
+   border: 12px ridge;
+   padding: 24px;
+   width: 60%;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+.gameboard {
+   border: 2px ridge blue;
+   background-color: Black;
+}
+/* this definition is deprecated */
+#taskinput {
+   border:4px groove green;
+   padding: 16px;
+   margin: 6px;
+   width: 55%;
+}

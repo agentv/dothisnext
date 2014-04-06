@@ -1,0 +1,79 @@
+<html>
+<head>
+   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body class="dothisnext">
+
+<!-- navigation and control line -->
+<div id="navline">
+<table width="100%"><tr>
+<td>
+<span id="apptitle"> Do This Next </span>
+</td>
+<td align="right">
+<b>User: {{ myname }} </b>&nbsp;
+<a href="/">Back to Application</a>&nbsp;
+<a href="help">Help</a>&nbsp;
+<a href="{{ url }}">{{ url_linktext }}</a><br />
+</td>
+</tr></table>
+</div>
+<!-- end navigation and control line -->
+
+<!-- task input form -->
+<form action="/taskupdate" method="post"> 
+   <table margin="5px">
+   <tr>
+      <td> Task Name: </td>
+      <td> <input name="taskname" type="text" size="40" 
+            value="{{ item.name }}" /> 
+      </td>
+   </tr>
+   <tr>
+      <td> Priority: </td>
+      <td> {{ priority_widget }} </td>
+   </tr>
+   <tr>
+      <td> Description: </td>
+      <td> <textarea name="description" cols="40" rows="5"> 
+         {{ item.description }} </textarea> </td>
+   </tr>
+   <tr>
+      <td> Category:</td>
+      <td> <input name="category" type="text" size="40" 
+         value="{{ tags_string }}" />
+         <div class="hint">enter comma separated tags</div> </td>
+   </tr>
+   <tr>
+      <td> Due Date: </td>
+      <td> <input type="text" name="due_date" size="32" /> </td>
+   </tr>
+   <tr>
+      <td> Owner:</td>
+      <td> <input type="text" name="owner" value="{{ item.owner }}" 
+         size="40" /> </td>
+   </tr>
+   <tr>
+      <td> Status: </td>
+      <td> {{ status_widget }} </td>
+   </tr>
+   <tr>
+      <td colspan="2">
+      <div class="hint">
+         <input type="hidden" name="key" value="{{ item_key }}">
+         <input type="submit" value="Update this Record" /> 
+      </div>
+   </td></tr>
+   </table>
+   </form>
+<!-- END task input form -->
+
+   <form action="/">
+      <input type="submit" value="Cancel" />
+   </form> 
+   <form action="/taskdelete" method="post">
+      <input type="hidden" name="key" value="{{ item_key }}">
+      <input type="submit" value="Delete This Record" />
+   </form>
+
+</body> </html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+
+<!-- navigation and control line -->
+<div id="navline">
+<table width="100%"><tr>
+<td>
+<img src="/images/selogo.jpg" />
+<span class="apptitle"> Do This Next </span>
+<br /><span class="hint">an application from Schoolhouse Earth</span>
+</td>
+<td align="right">
+<b>User: {{ myname }} </b>&nbsp;
+<a href="/">Back to Application</a>&nbsp;
+<a href="{{ url }}">{{ url_linktext }}</a><br />
+</td>
+</tr></table>
+</div>
+
+
+<h2> Do This Next </h2>
+<p>This application is designed to support those of us who are not satisfied with the state of "TO DO" list offerings currently in the public.</p>
+
+<p>Input a task name in the fields below. The only mandatory field is the task name. Obviously the more of the fields you populate, the better equipped you will be to track this task.  More as we go...
+</p>
+
+<pre>
+The following fields are defined in the data model:
+
+name
+priority
+due_date
+description
+tags
+creator
+owner
+status
+
+Only a few of them are gathered by the input form (for now)
+
+name
+priority
+description
+tags
+creator
+status
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- patch template: display gamepiece -->
+  
+ <table border="0">
+   <tr><td colspan="2" align="right">{{ player.name }} </td></tr>
+   <tr><td>Crops:</td><td align="right"> {{ player.crops }} </td></tr>
+   <tr><td>Minerals:</td>
+      <td align="right"> {{ player.minerals }} </td>
+   </tr>
+   <tr><td><b>Total Worth:</b></td>
+      <td align="right"><b> {{ player.worth }} </b></td>
+   </tr>
+   <tr><td>Farming Aptitude:</td>
+      <td align="right"> {{ player.farming_ability }} <td>
+   </tr>
+   <tr><td>Mining Aptitude:</td>
+      <td align="right"> {{ player.mining_ability }} <td>
+   </tr>
+   <tr><td>Current Location:</td>
+      <td align="right"> {{player.here_x}},{{player.here_y}} </td>
+   </tr>
+</table>

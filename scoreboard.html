@@ -1,0 +1,69 @@
+<html>
+<head>
+   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body class="tycoon">
+
+<!-- navigation and control line -->
+<div id="navline">
+<table width="90%"><tr>
+   <td width="50%">
+      <img src="/images/selogo.jpg" />
+      <span class="apptitle">Tycoon v0.9</span><br />
+      <span class="hint">an application from Schoolhouse Earth</span>
+   </td>
+   <td align="right">
+      <b>User: {{ myname }} </b>&nbsp;
+      <a href="/tycoon">Play Again</a>&nbsp;
+      <a href="{{ url }}">{{ url_linktext }}</a><br />
+   </td>
+</tr></table>
+</div>
+<!-- end navigation and control line -->
+
+<div class="hall_of_fame">
+<table border="1">
+<!--- scoreboard header -->
+<tr> <th colspan="3" align="center">Tycoon Hall of Fame</th> </tr>
+<tr> 
+   <th>Player</th>
+   <th>Score</th>
+   <th>Efficiency</th> 
+ </tr>
+<!--- end of scoreboard header -->
+
+{% for score in bestscores %}
+<tr>
+   <td> {{ score.name|escape }} </td>
+   <td> {{ score.total_worth|escape }} </td>
+   <td> {{ score.yield_ratio|escape }} </td>
+</tr>
+{% endfor %}
+
+<!-- a spacer -->
+<tr><td colspan="3">&nbsp;</td></tr>
+<!-- current player score -->
+<tr>
+   <td><b> {{ myscore.name }} </b> </td>
+   <td> {{ myscore.score }} </td>
+   <td> {{ myscore.efficiency }} </td>
+</tr> 
+
+<!-- a spacer -->
+<tr><td colspan="3">&nbsp;</td></tr>
+<!-- current player bank account -->
+<tr>
+   <td colspan="3" align="center"><b>Brainbank Account</b></td>
+<tr>
+   <td colspan="2" align="right"> {{myacct.name}} </td>
+   <td> {{myacct.balance}} </td>
+</tr>
+
+
+
+</table>
+</div><!-- end of hall_of_fame div -->
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<table border="0" cellpadding="4px">
+<tr>
+   <th class="bankingitem">Account Number </th>
+   <th class="bankingitem">Account Owner ID </th>
+   <th class="bankingitem">Account Balance </th>
+</tr>
+{% for element in resultset %}
+   <tr>
+      <td class="bankingitem"> 
+         {{ element.id }} 
+      </td>
+      <td class="bankingitem"> 
+         {{ element.ownername }} 
+      </td>
+      <td class="bankingitem"> 
+         {{ element.balance }} 
+      </td>
+   </tr>
+{% endfor %}
+</table>

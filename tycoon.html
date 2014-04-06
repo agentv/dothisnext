@@ -1,0 +1,115 @@
+<html>
+<head>
+   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body class="tycoon">
+
+<!-- navigation and control line -->
+<div id="navline">
+<table width="90%"><tr>
+   <td width="50%">
+      <img src="/images/selogo.jpg" />
+      <span class="apptitle">Tycoon v0.9</span><br />
+      <span class="hint">an application from Schoolhouse Earth</span>
+   </td>
+   <td align="right">
+      <b>User: {{ myname }} </b>&nbsp;
+      <a href="/">Return to Do This Next</a>&nbsp;
+      <a href="{{ url }}">{{ url_linktext }}</a><br />
+   </td>
+</tr></table>
+</div>
+
+<table><tr>
+<td valign="top" width="70%">
+
+<!-- now, let's get the gameboard up here -->
+<table border="0" cellpadding="0" class="gameboard">
+{% for row in tycoon_board.board %}
+   <tr>
+   {% for cell in row.strip %}
+      <td> {{ cell.render }}</td>
+   {% endfor %}
+   </tr>
+{% endfor %}
+
+   <tr>
+      <td colspan="8">&nbsp;</td>
+   </tr>
+   <tr>
+      <td colspan="8">&nbsp;
+         {{ backstory }}
+      </td>
+   </tr>
+
+</table>
+
+</td>
+<!-- end of left column -->
+
+<td valign="top">
+<!-- control box -->
+<div id="chatbox">
+
+<!-- updated player stat sheet -->
+{{ tycoon_status }}
+<hr width="45%">
+
+<!-- game clock -->
+<table class="controlpanel"><tr><td>
+Turn: {{ gameclock }}
+</td></tr></table>
+<!-- command board -->
+   <table class="controlpanel">
+   <tr><td>
+   <form action="/tycoon">
+   <input type="submit" name="cmd" value="mine">
+   <input type="submit" name="cmd" value="harvest">
+   <input type="submit" name="cmd" value="cultivate">
+   <input type="submit" name="cmd" value="build">
+   </form>
+   </td></tr></table>
+<!-- movement controls -->
+   <table class="controlpanel">
+   <form action="/tycoon?cmd=move">
+   <tr>
+   <td> <input type="submit" name="direction" value="northwest"></td>
+   <td> <input type="submit" name="direction" value="north"></td>
+   <td> <input type="submit" name="direction" value="northeast"></td>
+   </tr>
+   <tr>
+   <td> <input type="submit" name="direction" value="west"></td>
+   <td>&nbsp;</td> 
+   <td align="right"> <input type="submit" name="direction" value="east"></td>
+   </tr>
+   <tr>
+   <td> <input type="submit" name="direction" value="southwest"></td>
+   <td> <input type="submit" name="direction" value="south"></td>
+   <td> <input type="submit" name="direction" value="southeast"></td>
+   </tr>
+   </form>
+   </table>
+<!-- end of movement control -->
+
+<!-- chat log itself -->
+<hr width="45%">
+      {% for greeting in greetings %}
+            {% if greeting.author %}
+                    <b>{{ greeting.author.nickname }}:</b>
+            {% else %}
+                    <b>anonymous:</b>
+            {% endif %}
+            {{ greeting.content|escape }} <br />
+       {% endfor %}
+<form action="/sign" method="post"> 
+   <div>
+      <textarea name="content" cols="32" rows="3"></textarea>
+   </div> 
+   <div><input type="submit" value="Submit"></div> 
+</form>
+</div>
+<!-- end of chat log box -->
+</tr></table>
+
+</body>
+</html>

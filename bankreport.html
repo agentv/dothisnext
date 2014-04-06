@@ -1,0 +1,29 @@
+<html>
+<head>
+   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body class="dothisnext">
+
+<!-- navigation and control line -->
+<div id="navline">
+<table width="100%"><tr>
+<td>
+   <div style="float:left;padding:2px;">
+      <img src="/images/selogo.jpg" />
+   </div>
+   <span class="apptitle"> BrainBank Operations </span> <br />
+   <span class="hint">an application from Schoolhouse Earth</span>
+</td>
+<td align="right">
+   <b>User: {{ myname }} </b>&nbsp;
+   <a href="help">Help</a>&nbsp;
+   <a href="{{ url }}">{{ url_linktext }}</a><br />
+</td>
+</tr></table>
+</div>
+<!-- end navigation and control line -->
+
+<!-- main body section -->
+{{ pagebody }}
+<!-- end main body section -->
+</body> </html>
