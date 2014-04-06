@@ -1,5 +1,13 @@
 ...home for the dothisnext source repository.
 
-Once I have git fully configured, I'll be able to manage and
-extend this reference project.
+This is a reference project.  It contains a fair amount of python code
+as well as examples of how to use the Google Apps API.
+
+It is currently deployed using the schoolhouseearth.com instance of
+Google Apps and can be observed in operation there.
+
+It is not polished or highly finished, but it will provide me with a
+touch point to rediscover how to use this infrastructure.
+
+YMMV
 
